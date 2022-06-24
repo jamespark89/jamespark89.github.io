@@ -18,13 +18,13 @@ export default {}
   position: fixed;
   top: 0;
   width: 100%;
+  justify-content: end;
+  padding-right: 5rem;
   z-index: 999;
   background-color: var(--light);
   height: 48px;
   display: flex;
-  justify-content: end;
   align-items: center;
-  padding-right: 5rem;
 }
 a {
   padding: 1rem;

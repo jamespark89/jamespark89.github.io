@@ -11,6 +11,7 @@ import Navbar from './components/Navbar.vue'
   --grey: #64748b;
   --dark: #1e293b;
   --light: #f1f5f9;
+  --typewriterSpeed: 3s;
 }
 
 * {
