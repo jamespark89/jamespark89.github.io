@@ -22,15 +22,13 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    console.log(savedPosition)
     if (to.hash) {
+      console.log(to.hash)
       return {
         el: to.hash,
         behavior: 'smooth'
       }
     } else {
-      console.log('moving to top')
-
       return {
         left: 0,
         top: 0,

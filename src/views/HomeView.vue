@@ -1,4 +1,5 @@
 <template>
+  <Snow />
   <div id="home" class="home">
     <h1>Hello, my name is James.</h1>
   </div>
@@ -8,28 +9,25 @@
 </template>
 
 <script>
+import Snow from '@/components/Snow.vue'
 export default {
   name: 'HomeView',
-  components: {}
+  components: { Snow }
 }
 </script>
-<style scoped>
-div {
-  background: var(--dark);
-  width: 100%;
-  height: 100vh;
-  text-align: center;
 
-  z-index: 0;
-}
+<style scoped>
 .home {
   color: var(--light);
-  margin-top: 48px;
+  height: 100vh;
   display: flex;
   justify-content: center;
+  z-index: -1;
+  background: var(--dark);
 }
 h1 {
-  position: relative;
+  margin-top: 30vh;
+  position: absolute;
   font-family: 'Roboto Mono', monospace;
   width: max-content;
   height: max-content;
@@ -46,13 +44,15 @@ h1::after {
 
 h1::before {
   background: var(--dark);
-  animation: typewriter var(--typewriterSpeed) steps(24) 1s forwards;
+  animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCount)) 1s
+    forwards;
 }
 h1::after {
   width: 0.125em;
   background: yellow;
-  animation: typewriter var(--typewriterSpeed) steps(24) 1s forwards,
-    blink 800ms steps(24) infinite;
+  animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCount)) 1s
+      forwards,
+    blink 800ms steps(var(--typewriterCount)) infinite;
 }
 @keyframes typewriter {
   to {
@@ -66,6 +66,7 @@ h1::after {
 }
 .works {
   background: var(--light);
+  height: 100vh;
 }
 .about {
   background: var(--dark);

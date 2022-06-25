@@ -12,6 +12,7 @@ import Navbar from './components/Navbar.vue'
   --dark: #1e293b;
   --light: #f1f5f9;
   --typewriterSpeed: 3s;
+  --typewriterCount: 24;
 }
 
 * {
@@ -25,10 +26,10 @@ body {
   background: var(--light);
 }
 
-#app {
+/* #app {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-}
+} */
 </style>

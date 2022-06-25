@@ -1,10 +1,12 @@
 <template>
   <div class="navbar">
     <div class="nav-item">
-      <router-link to="/">Home</router-link>
-      <router-link to="#works">Works</router-link>
-      <router-link to="#about">About</router-link>
-      <router-link to="#contact">Contact</router-link>
+      <ul>
+        <li><router-link to="/">Home</router-link></li>
+        <li><router-link to="#works">Works</router-link></li>
+        <li><router-link to="#about">About</router-link></li>
+        <li><router-link to="#contact">Contact</router-link></li>
+      </ul>
     </div>
   </div>
 </template>
@@ -20,20 +22,24 @@ export default {}
   width: 100%;
   justify-content: end;
   padding-right: 5rem;
-  z-index: 999;
-  background-color: var(--light);
-  height: 48px;
+  z-index: 1;
+  background-color: var(--dark);
+  height: 52px;
   display: flex;
   align-items: center;
 }
 a {
   padding: 1rem;
-  color: var(--dark);
+  color: var(--light);
   text-decoration: none;
 }
 a:hover {
   background: var(--grey);
   border-radius: 1rem;
   color: var(--light);
+}
+ul {
+  display: flex;
+  list-style-type: none;
 }
 </style>
