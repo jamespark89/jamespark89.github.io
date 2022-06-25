@@ -19,7 +19,7 @@ export default {}
 .navbar {
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
   justify-content: end;
   padding-right: 5rem;
   z-index: 1;

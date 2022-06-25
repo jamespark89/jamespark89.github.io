@@ -20,6 +20,7 @@ export default {
 .home {
   color: var(--light);
   height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   z-index: -1;
@@ -65,13 +66,18 @@ h1::after {
   }
 }
 .works {
-  background: var(--light);
+  background: var(--dark);
   height: 100vh;
 }
 .about {
   background: var(--dark);
 }
 .contact {
-  background: var(--light);
+  background: var(--dark);
+}
+@media screen and (max-width: 600px) {
+  h1 {
+    display: none;
+  }
 }
 </style>
