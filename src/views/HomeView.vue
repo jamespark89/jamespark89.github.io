@@ -86,7 +86,10 @@ p {
 }
 @media screen and (max-width: 600px) {
   h1 {
-    display: none;
+    font-size: 20px;
+  }
+  p {
+    font-size: 18px;
   }
 }
 </style>
