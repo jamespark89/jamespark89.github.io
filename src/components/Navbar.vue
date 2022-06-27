@@ -1,14 +1,35 @@
 <template>
   <div class="navbar">
     <button @click="activateNavbar">
-      <img :src="require('../../public/' + pic + '.png')" alt="pic" />
+      <img
+        class="static"
+        :class="{ active: ~isActive }"
+        :src="require('../../public/' + pic[0] + '.png')"
+        alt="pic"
+      />
+    </button>
+    <button @click="activateNavbar">
+      <img
+        class="static"
+        :class="{ active: isActive }"
+        :src="require('../../public/' + pic[1] + '.png')"
+        alt="pic"
+      />
     </button>
     <div class="static nav-item" :class="{ active: isActive }">
       <ul>
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="#works">Works</router-link></li>
-        <li><router-link to="#about">About</router-link></li>
-        <li><router-link to="#contact">Contact</router-link></li>
+        <li><router-link @click="activateNavbar" to="/">Home</router-link></li>
+        <li>
+          <router-link @click="activateNavbar" to="#works">Works</router-link>
+        </li>
+        <li>
+          <router-link @click="activateNavbar" to="#about">About</router-link>
+        </li>
+        <li>
+          <router-link @click="activateNavbar" to="#contact"
+            >Contact</router-link
+          >
+        </li>
       </ul>
     </div>
   </div>
@@ -19,7 +40,7 @@ export default {
   data() {
     return {
       isActive: false,
-      pic: 'hamburger'
+      pic: ['hamburger', 'X']
     }
   },
   mounted() {},
@@ -70,13 +91,13 @@ a:hover {
   border-radius: 1rem;
   color: var(--light);
 }
-.static {
-  display: none;
+.nav-item {
   position: fixed;
   top: 0;
   border: 1px solid var(--light);
   border-radius: 1rem;
   background: var(--dark);
+  flex-direction: column;
 }
 ul {
   list-style-type: none;
@@ -85,8 +106,10 @@ ul > li {
   margin: 30px;
   font-size: 18px;
 }
+.static {
+  display: none;
+}
 .active {
   display: flex;
-  flex-direction: column;
 }
 </style>
