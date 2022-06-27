@@ -1,9 +1,15 @@
 <template>
   <Navbar />
   <router-view />
+  <WorksView id="works" />
+  <AboutView id="about" />
+  <ContactView id="contact" />
 </template>
 <script setup>
 import Navbar from './components/Navbar.vue'
+import WorksView from './views/WorksView.vue'
+import AboutView from './views/AboutView.vue'
+import ContactView from './views/ContactView.vue'
 </script>
 <style>
 :root {
@@ -25,11 +31,4 @@ import Navbar from './components/Navbar.vue'
 body {
   background: var(--light);
 }
-
-/* #app {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-} */
 </style>

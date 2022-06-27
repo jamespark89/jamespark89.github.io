@@ -2,10 +2,8 @@
   <Snow />
   <div id="home" class="home">
     <h1>Hello, my name is James.</h1>
+    <p>Front-end developer</p>
   </div>
-  <div id="works" class="works">Works</div>
-  <div id="about" class="about">About</div>
-  <div id="contact" class="contact">Contact</div>
 </template>
 
 <script>
@@ -22,6 +20,7 @@ export default {
   height: 100vh;
   width: 100vw;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   z-index: -1;
   background: var(--dark);
@@ -65,15 +64,25 @@ h1::after {
     background: transparent;
   }
 }
-.works {
-  background: var(--dark);
-  height: 100vh;
+p {
+  position: absolute;
+  margin-top: 42vh;
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  animation: slideup 5s;
 }
-.about {
-  background: var(--dark);
-}
-.contact {
-  background: var(--dark);
+@keyframes slideup {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+    top: 20%;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
 }
 @media screen and (max-width: 600px) {
   h1 {
