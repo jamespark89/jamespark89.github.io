@@ -12,6 +12,10 @@ import AboutView from './views/AboutView.vue'
 import ContactView from './views/ContactView.vue'
 </script>
 <style>
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --primary: #4ade80;
   --grey: #64748b;

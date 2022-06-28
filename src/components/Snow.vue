@@ -7,7 +7,7 @@ export default {
   data() {
     return {
       snowNumber: 200,
-      snowSize: 35,
+      snowSize: 50,
       count: '1',
       mouseX: '',
       mouseY: '',
@@ -19,6 +19,10 @@ export default {
   setup() {},
   mounted() {
     this.addSnow()
+    if (window.innerWidth < 700) {
+      this.snowNumber = 50
+      this.snowSize = 35
+    }
     window.addEventListener('mousemove', this.touchSnow)
   },
   methods: {
@@ -46,7 +50,7 @@ export default {
       if (this.count === this.snowNumber) {
         let i = 1
         let snow = 0
-        while (i < this.snowNumber) {
+        while (i < this.snowNumber + 1) {
           snow = document.getElementById(i)
           this.snowX = parseInt(snow.getBoundingClientRect().x / 50)
           this.snowY = parseInt(snow.getBoundingClientRect().y / 50)
