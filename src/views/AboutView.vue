@@ -8,7 +8,7 @@ export default {}
 
 <style scoped>
 .about {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background: var(--dark);
 }

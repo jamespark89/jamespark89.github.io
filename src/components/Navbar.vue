@@ -52,16 +52,16 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
 }
 button {
   width: 30px;
   height: 30px;
   background: transparent;
-  border: 1px solid var(--dark);
+  border: none;
   position: fixed;
   right: 1rem;
 }
@@ -71,25 +71,14 @@ button:hover {
 .navbar {
   position: fixed;
   top: 0;
-  width: 100vw;
+  width: 100%;
   justify-content: flex-end;
   padding-right: 5rem;
   z-index: 1;
-  background-color: var(--dark);
+  background-color: transparent;
   height: 52px;
   display: flex;
   align-items: center;
-}
-a {
-  padding: 1rem;
-  color: var(--light);
-  text-decoration: none;
-}
-
-a:hover {
-  background: var(--grey);
-  border-radius: 1rem;
-  color: var(--light);
 }
 .nav-item {
   position: fixed;

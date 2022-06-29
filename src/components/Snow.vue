@@ -78,8 +78,6 @@ export default {
   position: absolute;
   display: block;
   top: -10%;
-  /* background: snow; */
-  z-index: 1;
   border-radius: 100%;
   filter: blur(1px);
   animation: snowfall infinite;
@@ -96,9 +94,8 @@ export default {
   }
 }
 .wrapper {
-  position: absolute;
-  width: 100vw;
+  position: fixed;
+  width: 100%;
   height: 100vh;
-  background: var(--dark);
 }
 </style>

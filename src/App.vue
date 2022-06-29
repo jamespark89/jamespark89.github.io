@@ -35,4 +35,18 @@ html {
 body {
   background: var(--light);
 }
+a {
+  color: var(--light);
+  text-decoration: none;
+  padding: 1rem;
+}
+
+a:hover {
+  background: var(--grey);
+  border-radius: 1rem;
+  color: var(--light);
+}
+ul {
+  list-style-type: none;
+}
 </style>

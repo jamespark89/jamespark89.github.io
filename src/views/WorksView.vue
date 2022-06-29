@@ -19,16 +19,33 @@
     </aside>
     <main>
       <section class="projects">
-        <!-- <ul>
-          <li v-for="(project, index) in 5" :key="index">
-            <div :id="projectHref(index)" :class="projectHref(index)"></div>
+        <ul>
+          <li v-for="(project, index) in projects" :key="index">
+            <div :id="projectHref(index)" :class="projectHref(index)">
+              <div class="projectCard">
+                <div class="projectThumbnail">
+                  <img :src="getprojectThumbnail(index)" alt="" />
+                </div>
+                <div class="projectTitle">
+                  {{ projects[index].title }}
+                </div>
+                <div class="projectDescription">
+                  {{ projects[index].description }}
+                </div>
+                <div class="usedSkills">{{ projects[index].skills }}</div>
+                <div class="projectLink">
+                  <a href=""><img src="../assets/logo.png" alt="" /></a>
+                  <a href=""><img src="../assets/logo.png" alt="" /></a>
+                </div>
+              </div>
+            </div>
           </li>
-        </ul> -->
-        <div id="project1" class="project1"></div>
+        </ul>
+        <!-- <div id="project1" class="project1"></div>
         <div id="project2" class="project1"></div>
         <div id="project3" class="project1"></div>
         <div id="project4" class="project1"></div>
-        <div id="project5" class="project1"></div>
+        <div id="project5" class="project1"></div> -->
       </section>
     </main>
   </div>
@@ -39,7 +56,39 @@ export default {
   data() {
     return {
       isFixed: false,
-      isActive: false
+      isActive: false,
+      projects: [
+        {
+          src: require('../../public/portfolio.png'),
+          title: 'Fronted Portfolio Website',
+          description: 'Fronted Portfolio Website',
+          skills: 'Vue.js'
+        },
+        {
+          src: require('../assets/logo.png'),
+          title: 'Portfolio',
+          description: 'PortfolioWeb',
+          skills: 'Vue.js'
+        },
+        {
+          src: require('../assets/logo.png'),
+          title: 'Portfolio',
+          description: 'PortfolioWeb',
+          skills: 'Vue.js'
+        },
+        {
+          src: require('../assets/logo.png'),
+          title: 'Portfolio',
+          description: 'PortfolioWeb',
+          skills: 'Vue.js'
+        },
+        {
+          src: require('../assets/logo.png'),
+          title: 'Portfolio',
+          description: 'PortfolioWeb',
+          skills: 'Vue.js'
+        }
+      ]
     }
   },
   mounted() {
@@ -68,32 +117,35 @@ export default {
     },
     projectHref: function (index) {
       return 'project' + (index + 1).toString()
+    },
+    getprojectThumbnail: function (index) {
+      return this.projects[index].src
     }
   }
 }
 </script>
 <style scoped>
 .works {
-  width: 100vw;
+  width: 100%;
   height: 500vh;
   background: var(--light);
   display: flex;
 }
 .sidebar {
-  width: 30vw;
+  width: 30%;
   height: 100%;
   background: var(--dark);
   display: flex;
   justify-content: center;
 }
 main {
-  width: 70vw;
+  width: 70%;
   height: 100%;
   background: var(--dark);
 }
 .fixed {
   position: sticky;
-  top: 50px;
+  top: 20%;
 }
 #stickyDiv {
   height: fit-content;
@@ -103,15 +155,96 @@ main {
 .hide {
   display: none;
 }
-h1 {
+#stickyDiv > h1 {
   text-align: center;
+  font-size: 30px;
+  margin-bottom: 2rem;
 }
+
 .projects {
   display: flex;
   flex-direction: column;
+  background-color: var(--dark);
 }
-.projects > div {
+ul > li {
+  font-size: 18px;
+  padding: 1rem;
+}
+.projects > ul > li > div {
   width: 100%;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.projectCard {
+  margin-top: 10%;
+  position: relative;
+  width: 80%;
+  height: 80%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.3px);
+  -webkit-backdrop-filter: blur(7.3px);
+  border: 1px solid rgba(255, 255, 255, 0.37);
+  text-align: center;
+}
+.projectCard > div {
+  margin: 10px;
+}
+.projectThumbnail {
+  overflow: hidden;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.3px);
+  -webkit-backdrop-filter: blur(7.3px);
+  border: 1px solid rgba(255, 255, 255, 0.37);
+}
+.usedSkills,
+.projectTitle,
+.projectDescription {
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.3px);
+  -webkit-backdrop-filter: blur(7.3px);
+  border: 1px solid rgba(255, 255, 255, 0.37);
+  height: 5%;
+}
+.projectThumbnail > img {
+  min-width: 1000px;
+  width: 100%;
+  height: 100%;
+}
+.projectLink {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+}
+.projectLink > a {
+  padding: 0;
+  width: 40px;
+}
+.projectLink > a > img {
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 600px) {
+  .works {
+    flex-direction: column;
+  }
+  .sidebar,
+  main {
+    width: 100%;
+  }
+  #stickyDiv > ul {
+    display: none;
+  }
+  .projectCard {
+    width: 100%;
+  }
 }
 </style>

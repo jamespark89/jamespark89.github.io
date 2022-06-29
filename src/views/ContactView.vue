@@ -8,8 +8,8 @@ export default {}
 
 <style scoped>
 .contact {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  background: var(--light);
+  background: var(--dark);
 }
 </style>
