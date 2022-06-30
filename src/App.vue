@@ -1,8 +1,8 @@
 <template>
   <Navbar />
   <router-view />
-  <WorksView id="works" />
   <AboutView id="about" />
+  <WorksView id="works" />
   <ContactView id="contact" />
 </template>
 <script setup>
@@ -22,7 +22,7 @@ html {
   --dark: #1e293b;
   --light: #f1f5f9;
   --typewriterSpeed: 3s;
-  --typewriterCount: 24;
+  --typewriterCount: 17;
 }
 
 * {
@@ -35,17 +35,7 @@ html {
 body {
   background: var(--light);
 }
-a {
-  color: var(--light);
-  text-decoration: none;
-  padding: 1rem;
-}
 
-a:hover {
-  background: var(--grey);
-  border-radius: 1rem;
-  color: var(--light);
-}
 ul {
   list-style-type: none;
 }

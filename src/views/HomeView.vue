@@ -1,7 +1,9 @@
 <template>
   <Snow />
   <div id="home" class="home">
-    <h1>Hello, my name is James.</h1>
+    <div class="hello">
+      <h1>Hello, I'm James.</h1>
+    </div>
     <p>Front-end developer</p>
   </div>
 </template>
@@ -22,12 +24,12 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  z-index: -1;
-  background: var(--dark);
+  background: var(--dark); /* fallback for old browsers */
 }
+
 h1 {
   margin-top: 30vh;
-  position: absolute;
+  position: relative;
   font-family: 'Roboto Mono', monospace;
   width: max-content;
   height: max-content;
@@ -67,7 +69,7 @@ h1::after {
 p {
   position: absolute;
   margin-top: 42vh;
-  font-size: 24px;
+  font-size: 2rem;
   font-family: 'Roboto', sans-serif;
   animation: slideup 5s;
 }

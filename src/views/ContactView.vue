@@ -10,6 +10,7 @@ export default {}
 .contact {
   width: 100%;
   height: 100vh;
-  background: var(--dark);
+  background: -webkit-linear-gradient(to bottom, var(--dark), #6878ac);
+  background: linear-gradient(to bottom, var(--dark), #6878ac);
 }
 </style>

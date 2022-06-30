@@ -20,11 +20,12 @@
       <ul>
         <li><router-link @click="activateNavbar" to="/">Home</router-link></li>
         <li>
-          <router-link @click="activateNavbar" to="#works">Works</router-link>
-        </li>
-        <li>
           <router-link @click="activateNavbar" to="#about">About</router-link>
         </li>
+        <li>
+          <router-link @click="activateNavbar" to="#works">Works</router-link>
+        </li>
+
         <li>
           <router-link @click="activateNavbar" to="#contact"
             >Contact</router-link
@@ -100,5 +101,16 @@ ul > li {
 }
 .active {
   display: flex;
+}
+a {
+  color: var(--light);
+  text-decoration: none;
+  padding: 1rem;
+}
+
+a:hover {
+  background: var(--grey);
+  border-radius: 1rem;
+  color: var(--light);
 }
 </style>

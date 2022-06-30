@@ -3,16 +3,9 @@
     <aside id="sideDiv" class="sidebar">
       <div id="stickyDiv" :class="{ fixed: isFixed }">
         <h1>works</h1>
-        <!-- <ul>
-          <li><a href="#project1">Porject1</a></li>
-          <li><a href="#project2">Porject2</a></li>
-          <li><a href="#project3">Porject3</a></li>
-          <li><a href="#project4">Porject4</a></li>
-          <li><a href="#project5">Porject5</a></li>
-        </ul> -->
         <ul>
-          <li v-for="(project, index) in 5" :key="index">
-            <a :href="'#' + projectHref(index)">Project{{ index + 1 }}</a>
+          <li v-for="(project, index) in projects" :key="index">
+            <a :href="'#' + projectHref(index)">{{ projects[index].title }}</a>
           </li>
         </ul>
       </div>
@@ -21,7 +14,11 @@
       <section class="projects">
         <ul>
           <li v-for="(project, index) in projects" :key="index">
-            <div :id="projectHref(index)" :class="projectHref(index)">
+            <div
+              class="project"
+              :id="projectHref(index)"
+              :class="projectHref(index)"
+            >
               <div class="projectCard">
                 <div class="projectThumbnail">
                   <img :src="getprojectThumbnail(index)" alt="" />
@@ -34,18 +31,13 @@
                 </div>
                 <div class="usedSkills">{{ projects[index].skills }}</div>
                 <div class="projectLink">
-                  <a href=""><img src="../assets/logo.png" alt="" /></a>
-                  <a href=""><img src="../assets/logo.png" alt="" /></a>
+                  <a href=""><img src="../../public/demo.png" alt="" /></a>
+                  <a href=""><img src="../../public/github.png" alt="" /></a>
                 </div>
               </div>
             </div>
           </li>
         </ul>
-        <!-- <div id="project1" class="project1"></div>
-        <div id="project2" class="project1"></div>
-        <div id="project3" class="project1"></div>
-        <div id="project4" class="project1"></div>
-        <div id="project5" class="project1"></div> -->
       </section>
     </main>
   </div>
@@ -65,27 +57,15 @@ export default {
           skills: 'Vue.js'
         },
         {
-          src: require('../assets/logo.png'),
-          title: 'Portfolio',
-          description: 'PortfolioWeb',
+          src: require('../../public/portfolio.png'),
+          title: 'Project2',
+          description: 'Project2',
           skills: 'Vue.js'
         },
         {
-          src: require('../assets/logo.png'),
-          title: 'Portfolio',
-          description: 'PortfolioWeb',
-          skills: 'Vue.js'
-        },
-        {
-          src: require('../assets/logo.png'),
-          title: 'Portfolio',
-          description: 'PortfolioWeb',
-          skills: 'Vue.js'
-        },
-        {
-          src: require('../assets/logo.png'),
-          title: 'Portfolio',
-          description: 'PortfolioWeb',
+          src: require('../../public/portfolio.png'),
+          title: 'Project3',
+          description: 'Project3',
           skills: 'Vue.js'
         }
       ]
@@ -127,49 +107,63 @@ export default {
 <style scoped>
 .works {
   width: 100%;
-  height: 500vh;
-  background: var(--light);
+  height: 300vh;
   display: flex;
+  background: -webkit-linear-gradient(to top, var(--dark), #6878ac);
+  background: linear-gradient(to top, var(--dark), #6878ac);
 }
 .sidebar {
   width: 30%;
   height: 100%;
-  background: var(--dark);
+  /* background: var(--dark); */
   display: flex;
   justify-content: center;
 }
 main {
   width: 70%;
   height: 100%;
-  background: var(--dark);
+  /* background: var(--dark); */
 }
 .fixed {
   position: sticky;
   top: 20%;
 }
-#stickyDiv {
-  height: fit-content;
-  margin-top: 1rem;
-  color: var(--light);
-}
 .hide {
   display: none;
 }
+#stickyDiv {
+  height: fit-content;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  color: var(--light);
+}
+
 #stickyDiv > h1 {
   text-align: center;
   font-size: 30px;
   margin-bottom: 2rem;
 }
-
-.projects {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--dark);
+#stickyDiv > ul > li > a {
+  text-decoration: none;
+  color: var(--lihgt);
+  font-size: 1.2rem;
 }
-ul > li {
+#stickyDiv > ul > li {
   font-size: 18px;
   padding: 1rem;
+  margin: 1rem;
+  text-align: center;
 }
+a:hover {
+  transform: scale(1.1) !important;
+}
+.projects {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* background-color: var(--dark); */
+}
+
 .projects > ul > li > div {
   width: 100%;
   height: 100vh;
@@ -180,59 +174,40 @@ ul > li {
   margin-top: 10%;
   position: relative;
   width: 80%;
-  height: 80%;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(7.3px);
-  -webkit-backdrop-filter: blur(7.3px);
-  border: 1px solid rgba(255, 255, 255, 0.37);
+  height: 700px;
   text-align: center;
 }
 .projectCard > div {
   margin: 10px;
-}
-.projectThumbnail {
+  padding: 0.3rem;
   overflow: hidden;
-  height: 70%;
   display: flex;
   justify-content: center;
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(7.3px);
-  -webkit-backdrop-filter: blur(7.3px);
-  border: 1px solid rgba(255, 255, 255, 0.37);
 }
-.usedSkills,
-.projectTitle,
-.projectDescription {
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(7.3px);
-  -webkit-backdrop-filter: blur(7.3px);
-  border: 1px solid rgba(255, 255, 255, 0.37);
-  height: 5%;
+.projectThumbnail {
+  height: 70%;
+  padding: 0 !important;
+  border-radius: 0.5rem;
 }
+
 .projectThumbnail > img {
-  min-width: 1000px;
-  width: 100%;
   height: 100%;
 }
 .projectLink {
-  width: 48px;
-  height: 48px;
+  max-height: fit-content;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 .projectLink > a {
   padding: 0;
-  width: 40px;
+  width: 100px;
 }
 .projectLink > a > img {
-  width: 100%;
+  position: relative;
+  width: 40%;
   height: 100%;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .works {
     flex-direction: column;
   }
@@ -240,11 +215,19 @@ ul > li {
   main {
     width: 100%;
   }
+  .sidebar {
+    position: relative;
+    height: fit-content;
+  }
   #stickyDiv > ul {
     display: none;
   }
+  .project {
+    height: auto !important;
+  }
   .projectCard {
-    width: 100%;
+    width: 90%;
+    margin: 1rem;
   }
 }
 </style>
