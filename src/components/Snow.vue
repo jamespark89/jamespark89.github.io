@@ -7,7 +7,7 @@ export default {
   data() {
     return {
       snowNumber: 200,
-      snowSize: 50,
+      snowSize: 35,
       count: '1',
       mouseX: '',
       mouseY: '',
@@ -21,7 +21,7 @@ export default {
     this.addSnow()
     if (window.innerWidth < 700) {
       this.snowNumber = 50
-      this.snowSize = 35
+      this.snowSize = 25
     }
     window.addEventListener('mousemove', this.touchSnow)
   },

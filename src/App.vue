@@ -1,11 +1,13 @@
 <template>
   <Navbar />
+  <Snow />
   <router-view />
   <AboutView id="about" />
   <WorksView id="works" />
   <ContactView id="contact" />
 </template>
 <script setup>
+import Snow from '@/components/Snow.vue'
 import Navbar from './components/Navbar.vue'
 import WorksView from './views/WorksView.vue'
 import AboutView from './views/AboutView.vue'

@@ -75,7 +75,7 @@ button:hover {
   width: 100%;
   justify-content: flex-end;
   padding-right: 5rem;
-  z-index: 1;
+  z-index: 999;
   background-color: transparent;
   height: 52px;
   display: flex;

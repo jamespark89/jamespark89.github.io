@@ -20,7 +20,9 @@
 
 <script>
 import emailjs from '@emailjs/browser'
-
+import ScrollTrigger from 'gsap/ScrollTrigger'
+import gsap from 'gsap'
+gsap.registerPlugin(ScrollTrigger)
 export default {
   name: 'ContactUs',
   data() {
@@ -30,6 +32,20 @@ export default {
       message: ''
     }
   },
+  mounted() {
+    gsap.from('.contactform', {
+      scrollTrigger: {
+        trigger: '.contactform',
+        end: 'top center',
+        toggleActions: 'restart none none reset'
+      },
+      y: 100,
+      opacity: 0,
+      scale: 0.8,
+      duration: 1
+    })
+  },
+
   computed: {},
   methods: {
     sendEmail(e) {
@@ -104,8 +120,8 @@ form textarea {
 }
 form button {
   padding: 15px;
-  background: #ff5361;
-  color: #fff;
+  background: #82dee6;
+  color: var(--dark);
   font-size: 18px;
   border: 0;
   outline: none;
