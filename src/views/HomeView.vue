@@ -1,5 +1,4 @@
 <template>
-  <Snow />
   <div id="home" class="home">
     <div class="hello">
       <h1>Hello, I'm James.</h1>
@@ -9,10 +8,8 @@
 </template>
 
 <script>
-import Snow from '@/components/Snow.vue'
 export default {
-  name: 'HomeView',
-  components: { Snow }
+  name: 'HomeView'
 }
 </script>
 

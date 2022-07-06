@@ -21,7 +21,7 @@
             >
               <div class="projectCard">
                 <div class="projectThumbnail">
-                  <img :src="getprojectThumbnail(index)" alt="" />
+                  <img :src="projects[index].src" alt="" />
                 </div>
                 <div class="projectTitle">
                   {{ projects[index].title }}
@@ -31,8 +31,12 @@
                 </div>
                 <div class="usedSkills">{{ projects[index].skills }}</div>
                 <div class="projectLink">
-                  <a href=""><img src="../../public/demo.png" alt="" /></a>
-                  <a href=""><img src="../../public/github.png" alt="" /></a>
+                  <a :href="projects[index].liveLink"
+                    ><img src="../../public/demo.png" alt=""
+                  /></a>
+                  <a :href="projects[index].githubLink"
+                    ><img src="../../public/github.png" alt=""
+                  /></a>
                 </div>
               </div>
             </div>
@@ -44,6 +48,9 @@
 </template>
 
 <script>
+import ScrollTrigger from 'gsap/ScrollTrigger'
+import gsap from 'gsap'
+gsap.registerPlugin(ScrollTrigger)
 export default {
   data() {
     return {
@@ -54,28 +61,55 @@ export default {
           src: require('../../public/portfolio.png'),
           title: 'Fronted Portfolio Website',
           description: 'Fronted Portfolio Website',
-          skills: 'Vue.js'
+          skills: 'Vue.js',
+          liveLink: 'https://jamespark89.github.io',
+          githubLink: 'https://jamespark89.github.io'
         },
         {
           src: require('../../public/portfolio.png'),
           title: 'Project2',
           description: 'Project2',
-          skills: 'Vue.js'
+          skills: 'Vue.js',
+          liveLink: '#',
+          githubLink: '#'
         },
         {
           src: require('../../public/portfolio.png'),
           title: 'Project3',
           description: 'Project3',
-          skills: 'Vue.js'
+          skills: 'Vue.js',
+          liveLink: '#',
+          githubLink: '#'
         }
       ]
     }
   },
   mounted() {
     window.addEventListener('scroll', this.getSticky)
-  },
-  unmounted() {
-    window.removeEventListener('scroll', this.getSticky)
+    gsap.from('#stickyDiv', {
+      scrollTrigger: {
+        trigger: '#stickyDiv',
+        end: 'top center',
+        marker: true,
+        toggleActions: 'restart none none reset'
+      },
+
+      opacity: 0,
+      scale: 0.8,
+      duration: 1
+    })
+    for (let i = 1; i < this.projects.length + 1; i++) {
+      gsap.from('.project' + i, {
+        scrollTrigger: {
+          trigger: '.project' + i,
+          end: 'top center',
+          toggleActions: 'restart none none none'
+        },
+        scale: 0.8,
+        opacity: 0,
+        duration: 1
+      })
+    }
   },
   methods: {
     getSticky() {
@@ -143,19 +177,28 @@ main {
   font-size: 30px;
   margin-bottom: 2rem;
 }
-#stickyDiv > ul > li > a {
-  text-decoration: none;
-  color: var(--lihgt);
-  font-size: 1.2rem;
-}
 #stickyDiv > ul > li {
   font-size: 18px;
   padding: 1rem;
   margin: 1rem;
+  height: 2rem;
   text-align: center;
 }
+
+#stickyDiv > ul > li > a {
+  text-decoration: none;
+  color: var(--lihgt);
+  font-size: 1.1rem;
+  padding: 0.1rem;
+}
+
+#stickyDiv > ul > li > a:hover {
+  border-bottom: 3px solid var(--orange);
+  transform: scale(1.2);
+}
+
 a:hover {
-  transform: scale(1.1) !important;
+  transform: scale(1.1);
 }
 .projects {
   height: 100%;
@@ -206,6 +249,15 @@ a:hover {
   position: relative;
   width: 40%;
   height: 100%;
+}
+.projectTitle,
+.projectDescription,
+.usedSkills {
+  color: var(--light);
+}
+.projectTitle {
+  font-size: 1.5rem;
+  background: var(--grey);
 }
 @media screen and (max-width: 700px) {
   .works {

@@ -40,9 +40,9 @@ export default {
         toggleActions: 'restart none none reset'
       },
       y: 100,
-      opacity: 0,
+
       scale: 0.8,
-      duration: 1
+      duration: 0.5
     })
   },
 
@@ -120,7 +120,7 @@ form textarea {
 }
 form button {
   padding: 15px;
-  background: #82dee6;
+  background: var(--orange);
   color: var(--dark);
   font-size: 18px;
   border: 0;

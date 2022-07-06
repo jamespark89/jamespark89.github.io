@@ -105,12 +105,12 @@ ul > li {
 a {
   color: var(--light);
   text-decoration: none;
-  padding: 1rem;
+  padding: 0.7rem;
+  border: 2px solid var(--dark);
 }
 
 a:hover {
-  background: var(--grey);
+  border: 2px solid var(--orange);
   border-radius: 1rem;
-  color: var(--light);
 }
 </style>

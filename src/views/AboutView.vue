@@ -10,7 +10,8 @@
             Hi, I'm a
             <b style="color: var(--light)">front-end developer</b> based on
             Melbourne.<br />
-            I'm interested in making value with technologies.<br />
+            I love to making value with
+            <b style="color: var(--light)">web development.</b><br />
           </p>
         </div>
       </div>
@@ -20,10 +21,9 @@
         </div>
         <div class="skillsIcon">
           <ul>
-            <li><img src="../../public/html-5.png" alt="" /></li>
-            <li><img src="../../public/css-3.png" alt="" /></li>
-            <li><img src="../../public/java-script.png" alt="" /></li>
-            <li><img src="../../public/vue.png" alt="" /></li>
+            <li v-for="(skillsimg, index) in skillsimgs" :key="index">
+              <img :src="getskillsimg(index)" alt="" />
+            </li>
           </ul>
         </div>
       </div>
@@ -37,9 +37,17 @@ import gsap from 'gsap'
 gsap.registerPlugin(ScrollTrigger)
 
 export default {
-  setup() {
-    // const tl = gsap.timeline()
+  data() {
+    return {
+      skillsimgs: [
+        require('../../public/html-5.png'),
+        require('../../public/css-3.png'),
+        require('../../public/java-script.png'),
+        require('../../public/vue.png')
+      ]
+    }
   },
+  setup() {},
   mounted() {
     gsap.from('.aboutmeHead', {
       scrollTrigger: {
@@ -73,7 +81,7 @@ export default {
     })
     gsap.from('.skillsIcon', {
       scrollTrigger: {
-        trigger: '.skills',
+        trigger: '.aboutmeMain',
         end: 'top center',
         scrub: 3,
         toggleActions: 'restart none none reset'
@@ -82,7 +90,11 @@ export default {
       opacity: 0
     })
   },
-  methods: {}
+  methods: {
+    getskillsimg: function (index) {
+      return this.skillsimgs[index]
+    }
+  }
 }
 </script>
 
@@ -107,7 +119,7 @@ h1 {
 }
 .aboutmeMain > p {
   margin-top: 3rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #aaaaaa;
   font-family: 'Roboto Mono', monospace;
 }

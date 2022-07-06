@@ -23,6 +23,7 @@ html {
   --grey: #64748b;
   --dark: #1e293b;
   --light: #f1f5f9;
+  --orange: rgb(248, 205, 124);
   --typewriterSpeed: 3s;
   --typewriterCount: 17;
 }

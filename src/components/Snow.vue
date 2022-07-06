@@ -19,17 +19,17 @@ export default {
   setup() {},
   mounted() {
     this.addSnow()
-    if (window.innerWidth < 700) {
-      this.snowNumber = 50
-      this.snowSize = 25
-    }
+
     window.addEventListener('mousemove', this.touchSnow)
   },
   methods: {
     addSnow() {
+      if (window.innerWidth < 700) {
+        this.snowNumber = 50
+        this.snowSize = 25
+      }
       const snow = document.createElement('span')
       snow.className = 'snow'
-
       snow.style.left = `${Math.random() * (window.innerWidth - 1) + 1}px`
       snow.style.animationDuration = `${Math.random() * (20 - 8) + 8}s`
       snow.style.animationDelay = `${Math.random() * (10 - 1) + 1}s`
