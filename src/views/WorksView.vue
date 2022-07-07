@@ -31,10 +31,10 @@
                 </div>
                 <div class="usedSkills">{{ projects[index].skills }}</div>
                 <div class="projectLink">
-                  <a :href="projects[index].liveLink"
+                  <!-- <a :href="projects[index].liveLink" target="_blank"
                     ><img src="../../public/demo.png" alt=""
-                  /></a>
-                  <a :href="projects[index].githubLink"
+                  /></a> -->
+                  <a :href="projects[index].githubLink" target="_blank"
                     ><img src="../../public/github.png" alt=""
                   /></a>
                 </div>
@@ -63,23 +63,25 @@ export default {
           description: 'Fronted Portfolio Website',
           skills: 'Vue.js',
           liveLink: 'https://jamespark89.github.io',
-          githubLink: 'https://jamespark89.github.io'
+          githubLink:
+            'https://github.com/jamespark89/jamespark89.github.io/tree/master'
         },
         {
-          src: require('../../public/portfolio.png'),
-          title: 'Project2',
-          description: 'Project2',
-          skills: 'Vue.js',
+          src: require('../../public/communitywebsite.png'),
+          title: 'communitywebsite',
+          description: 'Login / board',
+          skills: 'PHP / Mysql',
           liveLink: '#',
-          githubLink: '#'
+          githubLink:
+            'https://github.com/jamespark89/communityWebsite/tree/main'
         },
         {
-          src: require('../../public/portfolio.png'),
-          title: 'Project3',
-          description: 'Project3',
-          skills: 'Vue.js',
+          src: require('../../public/photoweb.png'),
+          title: 'Photography Web',
+          description: 'Landing page / gallery',
+          skills: 'PHP',
           liveLink: '#',
-          githubLink: '#'
+          githubLink: 'https://github.com/jamespark89/photoweb-php-'
         }
       ]
     }
@@ -262,6 +264,7 @@ a:hover {
 @media screen and (max-width: 700px) {
   .works {
     flex-direction: column;
+    height: auto;
   }
   .sidebar,
   main {
@@ -274,12 +277,13 @@ a:hover {
   #stickyDiv > ul {
     display: none;
   }
-  .project {
-    height: auto !important;
+  .projects > ul > li > div {
+    height: 60vh;
   }
   .projectCard {
     width: 90%;
     margin: 1rem;
+    height: 50%;
   }
 }
 </style>

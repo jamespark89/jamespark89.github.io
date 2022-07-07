@@ -43,7 +43,8 @@ export default {
         require('../../public/html-5.png'),
         require('../../public/css-3.png'),
         require('../../public/java-script.png'),
-        require('../../public/vue.png')
+        require('../../public/vue.png'),
+        require('../../public/php.png')
       ]
     }
   },
@@ -86,7 +87,7 @@ export default {
         scrub: 3,
         toggleActions: 'restart none none reset'
       },
-      x: 700,
+      x: 500,
       opacity: 0
     })
   },
@@ -122,20 +123,29 @@ h1 {
   font-size: 1.2rem;
   color: #aaaaaa;
   font-family: 'Roboto Mono', monospace;
+  overflow: hidden;
 }
 .skills {
   margin-top: 10rem;
+  overflow: hidden;
 }
 .skillsIcon > ul {
   display: flex;
   flex-direction: row;
   margin: 16px;
 }
-.skills ul > li > img {
+.skillsIcon ul > li > img {
   width: 80%;
+  min-width: 50px;
 }
 .skills ul > li {
   width: 10vw;
   margin: 3%;
+}
+@media screen and (max-width: 600px) {
+  .skillsIcon > ul {
+    flex-wrap: wrap;
+    justify-content: left;
+  }
 }
 </style>

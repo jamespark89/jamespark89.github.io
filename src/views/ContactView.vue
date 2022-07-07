@@ -134,4 +134,10 @@ form button {
 form button:hover {
   background-color: #b8c7b9;
 }
+@media screen and (max-width: 600px) {
+  .contact {
+    height: 80vh;
+    justify-content: initial;
+  }
+}
 </style>
