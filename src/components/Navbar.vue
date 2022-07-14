@@ -16,7 +16,10 @@
         alt="pic"
       />
     </button>
-    <div class="static nav-item" :class="{ active: isActive }">
+    <div
+      class="static nav-item"
+      :class="{ active: isActive, deactive: ~isActive }"
+    >
       <ul>
         <li><router-link @click="activateNavbar" to="/">Home</router-link></li>
         <li>
@@ -74,7 +77,6 @@ button:hover {
   top: 0;
   width: 100%;
   justify-content: flex-end;
-  padding-right: 5rem;
   z-index: 999;
   background-color: transparent;
   height: 52px;
@@ -88,6 +90,7 @@ button:hover {
   border-radius: 1rem;
   background: var(--dark);
   flex-direction: column;
+  margin-top: 50px;
 }
 ul {
   list-style-type: none;
@@ -100,7 +103,16 @@ ul > li {
   display: none;
 }
 .active {
-  display: flex;
+  display: block;
+  animation: open 0.3s;
+}
+@keyframes open {
+  from {
+    right: -160px;
+  }
+  to {
+    right: 0;
+  }
 }
 a {
   color: var(--light);
@@ -108,7 +120,6 @@ a {
   padding: 0.7rem;
   border: 2px solid var(--dark);
 }
-
 a:hover {
   border: 2px solid var(--orange);
   border-radius: 1rem;

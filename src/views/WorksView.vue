@@ -31,9 +31,9 @@
                 </div>
                 <div class="usedSkills">{{ projects[index].skills }}</div>
                 <div class="projectLink">
-                  <!-- <a :href="projects[index].liveLink" target="_blank"
+                  <a :href="projects[index].liveLink" target="_blank"
                     ><img src="../../public/demo.png" alt=""
-                  /></a> -->
+                  /></a>
                   <a :href="projects[index].githubLink" target="_blank"
                     ><img src="../../public/github.png" alt=""
                   /></a>
@@ -58,11 +58,19 @@ export default {
       isActive: false,
       projects: [
         {
+          src: require('../../public/ecommerce.png'),
+          title: 'Ecommerce Website',
+          description: 'Ecommerce Website',
+          skills: 'Vue.js',
+          liveLink: 'http://ecommerce.devjamespark.com',
+          githubLink: 'https://https://github.com/jamespark89/ecommerce-vue'
+        },
+        {
           src: require('../../public/portfolio.png'),
           title: 'Fronted Portfolio Website',
           description: 'Fronted Portfolio Website',
           skills: 'Vue.js',
-          liveLink: 'https://jamespark89.github.io',
+          liveLink: 'https://devjamespark.com',
           githubLink:
             'https://github.com/jamespark89/jamespark89.github.io/tree/master'
         },
@@ -71,7 +79,7 @@ export default {
           title: 'communitywebsite',
           description: 'Login / board',
           skills: 'PHP / Mysql',
-          liveLink: '#',
+          liveLink: 'http://auslife.devjamespark.com/',
           githubLink:
             'https://github.com/jamespark89/communityWebsite/tree/main'
         },
@@ -79,8 +87,8 @@ export default {
           src: require('../../public/photoweb.png'),
           title: 'Photography Web',
           description: 'Landing page / gallery',
-          skills: 'PHP',
-          liveLink: '#',
+          skills: 'PHP / Bootstrap',
+          liveLink: 'https://jphotographyweb.herokuapp.com/',
           githubLink: 'https://github.com/jamespark89/photoweb-php-'
         }
       ]
@@ -143,7 +151,7 @@ export default {
 <style scoped>
 .works {
   width: 100%;
-  height: 300vh;
+  height: 400vh;
   display: flex;
   background: -webkit-linear-gradient(to top, var(--dark), #6878ac);
   background: linear-gradient(to top, var(--dark), #6878ac);
@@ -252,14 +260,14 @@ a:hover {
   width: 40%;
   height: 100%;
 }
-.projectTitle,
 .projectDescription,
 .usedSkills {
   color: var(--light);
 }
 .projectTitle {
   font-size: 1.5rem;
-  background: var(--grey);
+  color: var(--dark);
+  background: var(--orange);
 }
 @media screen and (max-width: 700px) {
   .works {
