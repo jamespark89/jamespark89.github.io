@@ -1,0 +1,191 @@
+<template>
+  <div class="projects">
+    <ul>
+      <li v-for="(project, index) in projects" :key="index">
+        <div
+          class="project"
+          :id="projectHref(index)"
+          :class="projectHref(index)"
+        >
+          <div class="projectCard">
+            <div class="projectThumbnail">
+              <img :src="projects[index].src" alt="" />
+            </div>
+            <div class="projectTitle">
+              {{ projects[index].title }}
+            </div>
+            <div class="projectDescription">
+              {{ projects[index].description }}
+            </div>
+            <div class="usedSkills">{{ projects[index].skills }}</div>
+            <div class="projectLink">
+              <a :href="projects[index].liveLink" target="_blank"
+                ><img src="../../public/demo.png" alt=""
+              /></a>
+              <a :href="projects[index].githubLink" target="_blank"
+                ><img src="../../public/github.png" alt=""
+              /></a>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script>
+import ScrollTrigger from 'gsap/ScrollTrigger'
+import gsap from 'gsap'
+gsap.registerPlugin(ScrollTrigger)
+
+export default {
+  data() {
+    return {
+      projects: [
+        {
+          src: require('../../public/ecommerce.png'),
+          title: 'Ecommerce Website',
+          description: 'Ecommerce Website',
+          skills: 'Vue.js',
+          liveLink: 'http://ecommerce.devjamespark.com',
+          githubLink: 'https://github.com/jamespark89/ecommerce-vue'
+        },
+        {
+          src: require('../../public/portfolio.png'),
+          title: 'Fronted Portfolio Website',
+          description: 'Fronted Portfolio Website',
+          skills: 'Vue.js',
+          liveLink: 'https://devjamespark.com',
+          githubLink:
+            'https://github.com/jamespark89/jamespark89.github.io/tree/master'
+        },
+        {
+          src: require('../../public/communitywebsite.png'),
+          title: 'communitywebsite',
+          description: 'Login / board',
+          skills: 'PHP / Mysql',
+          liveLink: 'http://auslife.devjamespark.com/',
+          githubLink:
+            'https://github.com/jamespark89/communityWebsite/tree/main'
+        },
+        {
+          src: require('../../public/photoweb.png'),
+          title: 'Photography Web',
+          description: 'Landing page / gallery',
+          skills: 'PHP / Bootstrap',
+          liveLink: 'https://jphotographyweb.herokuapp.com/',
+          githubLink: 'https://github.com/jamespark89/photoweb-php-'
+        }
+      ]
+    }
+  },
+  mounted() {
+    for (let i = 1; i < this.projects.length + 1; i++) {
+      gsap.from('.project' + i, {
+        scrollTrigger: {
+          trigger: '.project' + i,
+          end: 'top center',
+          toggleActions: 'restart none none none'
+        },
+        scale: 0.8,
+        opacity: 0,
+        duration: 1
+      })
+    }
+  },
+  methods: {
+    projectHref: function (index) {
+      return 'project' + (index + 1).toString()
+    },
+    getprojectThumbnail: function (index) {
+      return this.projects[index].src
+    }
+  }
+}
+</script>
+
+<style scoped>
+a:hover {
+  transform: scale(1.1);
+}
+.projects {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* background-color: var(--dark); */
+}
+
+.projects > ul > li > div {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.projectCard {
+  margin-top: 10%;
+  position: relative;
+  width: 80%;
+  height: 700px;
+  text-align: center;
+}
+.projectCard > div {
+  margin: 10px;
+  padding: 0.3rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+.projectThumbnail {
+  height: 70%;
+  padding: 0 !important;
+  border-radius: 0.5rem;
+}
+
+.projectThumbnail > img {
+  height: 100%;
+}
+.projectLink {
+  max-height: fit-content;
+  display: flex;
+  justify-content: space-between;
+}
+.projectLink > a {
+  padding: 0;
+  width: 100px;
+}
+.projectLink > a > img {
+  position: relative;
+  width: 40%;
+  height: 100%;
+}
+.projectDescription,
+.usedSkills {
+  color: var(--light);
+}
+.projectTitle {
+  font-size: 1.5rem;
+  color: var(--dark);
+  background: var(--orange);
+}
+@media screen and (max-width: 700px) {
+  .sidebar,
+  main {
+    width: 100%;
+  }
+  .sidebar {
+    position: relative;
+    height: fit-content;
+  }
+  #stickyDiv > ul {
+    display: none;
+  }
+  .projects > ul > li > div {
+    height: 60vh;
+  }
+  .projectCard {
+    width: 90%;
+    margin: 1rem;
+    height: 50%;
+  }
+}
+</style>

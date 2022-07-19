@@ -1,12 +1,12 @@
 <template>
   <div class="link">
     <a href="https://github.com/jamespark89" target="_blank"
-      ><img src="../../public/githubid.png" alt=""
+      ><img class="githubimg" src="../../public/githubid.png" alt=""
     /></a>
     <a
       href="https://www.linkedin.com/in/sangkook-park-721426210/"
       target="_blank"
-      ><img src="../../public/linkedinid.png" alt=""
+      ><img class="linkedinimg" src="../../public/linkedinid.png" alt=""
     /></a>
     <div class="stem"></div>
   </div>
@@ -44,8 +44,8 @@ export default {
   left: -15px;
   position: absolute;
   background: var(--dark);
-  animation: linkgrow 3s forwards;
-  animation-delay: 2s;
+  animation: linkgrow 2s forwards;
+  animation-delay: 1s;
 }
 img {
   width: 50px;
@@ -55,13 +55,23 @@ img {
   box-shadow: 0 0px 10px 5px var(--orange);
 }
 .stem {
-  width: 3px;
   height: 100px;
-  background-color: #f0f0f0;
   box-shadow: 0 0px 10px 5px var(--orange);
 }
-img:hover {
+.githubimg:hover {
   transform: scale(1.1);
-  background-color: var(--orange);
+  background-color: rgb(255, 129, 129);
+}
+.linkedinimg:hover {
+  transform: scale(1.1);
+  background-color: var(--primary);
+}
+@media screen and (max-width: 600px) {
+  .link {
+    position: absolute;
+  }
+  .stem {
+    box-shadow: none;
+  }
 }
 </style>

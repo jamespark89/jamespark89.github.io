@@ -1,7 +1,6 @@
 <template>
   <Navbar />
   <Snow />
-  <AppLink />
   <router-view />
   <AboutView id="about" />
   <WorksView id="works" />
@@ -13,7 +12,6 @@ import Navbar from './components/Navbar.vue'
 import WorksView from './views/WorksView.vue'
 import AboutView from './views/AboutView.vue'
 import ContactView from './views/ContactView.vue'
-import AppLink from './components/AppLink.vue'
 </script>
 <style>
 html {
@@ -21,7 +19,7 @@ html {
 }
 
 :root {
-  --primary: #4ade80;
+  --primary: #6ac98d;
   --grey: #64748b;
   --dark: #1e293b;
   --light: #f1f5f9;

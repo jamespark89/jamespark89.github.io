@@ -4,11 +4,15 @@
       <h1>Hello, I'm James.</h1>
     </div>
     <p>Front-end developer</p>
+    <app-link />
   </div>
 </template>
 
 <script>
+import AppLink from '@/components/AppLink.vue'
+
 export default {
+  components: { AppLink },
   name: 'HomeView'
 }
 </script>
@@ -23,7 +27,6 @@ export default {
   justify-content: center;
   background: var(--dark); /* fallback for old browsers */
 }
-
 h1 {
   margin-top: 30vh;
   position: relative;
