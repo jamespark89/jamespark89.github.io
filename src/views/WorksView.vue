@@ -63,7 +63,7 @@ export default {
           description: 'Ecommerce Website',
           skills: 'Vue.js',
           liveLink: 'http://ecommerce.devjamespark.com',
-          githubLink: 'https://https://github.com/jamespark89/ecommerce-vue'
+          githubLink: 'https://github.com/jamespark89/ecommerce-vue'
         },
         {
           src: require('../../public/portfolio.png'),
