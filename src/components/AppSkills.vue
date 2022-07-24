@@ -62,13 +62,6 @@ export default {
 </script>
 
 <style scoped>
-.card {
-  color: var(--light);
-  position: relative;
-  top: 10%;
-  width: 60%;
-}
-
 h1 {
   font-size: 2rem;
 }

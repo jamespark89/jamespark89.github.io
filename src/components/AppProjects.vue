@@ -43,6 +43,14 @@ export default {
     return {
       projects: [
         {
+          src: require('../../public/movieapp.png'),
+          title: 'Movie App',
+          description: 'Movie App',
+          skills: 'React.js / Material UI',
+          liveLink: 'https://jamespark89.github.io/react-app-movieapp',
+          githubLink: 'https://github.com/jamespark89/react-app-movieapp'
+        },
+        {
           src: require('../../public/ecommerce.png'),
           title: 'Ecommerce Website',
           description: 'Ecommerce Website',

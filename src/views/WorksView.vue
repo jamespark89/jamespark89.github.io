@@ -18,7 +18,7 @@ export default {
 <style scoped>
 .works {
   width: 100%;
-  height: 400vh;
+  height: 500vh;
   display: flex;
   background: -webkit-linear-gradient(to top, var(--dark), #6878ac);
   background: linear-gradient(to top, var(--dark), #6878ac);
