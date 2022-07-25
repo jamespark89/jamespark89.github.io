@@ -10,6 +10,7 @@
           <div class="projectCard">
             <div class="projectThumbnail">
               <img :src="projects[index].src" alt="" />
+              <!-- <img :src="require('../../public/movieapp.png')" alt="" /> -->
             </div>
             <div class="projectTitle">
               {{ projects[index].title }}
@@ -34,6 +35,7 @@
 </template>
 
 <script>
+import data from '../../static/projects.json'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import gsap from 'gsap'
 gsap.registerPlugin(ScrollTrigger)
@@ -41,50 +43,7 @@ gsap.registerPlugin(ScrollTrigger)
 export default {
   data() {
     return {
-      projects: [
-        {
-          src: require('../../public/movieapp.png'),
-          title: 'Movie App',
-          description: 'Movie App',
-          skills: 'React.js / Material UI',
-          liveLink: 'https://jamespark89.github.io/react-app-movieapp',
-          githubLink: 'https://github.com/jamespark89/react-app-movieapp'
-        },
-        {
-          src: require('../../public/ecommerce.png'),
-          title: 'Ecommerce Website',
-          description: 'Ecommerce Website',
-          skills: 'Vue.js',
-          liveLink: 'http://ecommerce.devjamespark.com',
-          githubLink: 'https://github.com/jamespark89/ecommerce-vue'
-        },
-        {
-          src: require('../../public/portfolio.png'),
-          title: 'Fronted Portfolio Website',
-          description: 'Fronted Portfolio Website',
-          skills: 'Vue.js',
-          liveLink: 'https://devjamespark.com',
-          githubLink:
-            'https://github.com/jamespark89/jamespark89.github.io/tree/master'
-        },
-        {
-          src: require('../../public/communitywebsite.png'),
-          title: 'communitywebsite',
-          description: 'Login / board',
-          skills: 'PHP / Mysql',
-          liveLink: 'http://auslife.devjamespark.com/',
-          githubLink:
-            'https://github.com/jamespark89/communityWebsite/tree/main'
-        },
-        {
-          src: require('../../public/photoweb.png'),
-          title: 'Photography Web',
-          description: 'Landing page / gallery',
-          skills: 'PHP / Bootstrap',
-          liveLink: 'https://jphotographyweb.herokuapp.com/',
-          githubLink: 'https://github.com/jamespark89/photoweb-php-'
-        }
-      ]
+      projects: data
     }
   },
   mounted() {

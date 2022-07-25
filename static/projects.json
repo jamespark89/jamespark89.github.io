@@ -1,0 +1,42 @@
+[
+  {
+    "src": "movieapp.png",
+    "title": "Movie App",
+    "description": "Movie App",
+    "skills": "React.js / Material UI",
+    "liveLink": "https://jamespark89.github.io/react-app-movieapp",
+    "githubLink": "https://github.com/jamespark89/react-app-movieapp"
+  },
+  {
+    "src": "ecommerce.png",
+    "title": "Ecommerce Website",
+    "description": "Ecommerce Website",
+    "skills": "Vue.js",
+    "liveLink": "http://ecommerce.devjamespark.com",
+    "githubLink": "https://github.com/jamespark89/ecommerce-vue"
+  },
+  {
+    "src": "portfolio.png",
+    "title": "Fronted Portfolio Website",
+    "description": "Fronted Portfolio Website",
+    "skills": "Vue.js",
+    "liveLink": "https://devjamespark.com",
+    "githubLink": "https://github.com/jamespark89/jamespark89.github.io/tree/master"
+  },
+  {
+    "src": "communitywebsite.png",
+    "title": "communitywebsite",
+    "description": "Login / board",
+    "skills": "PHP / Mysql",
+    "liveLink": "http://auslife.devjamespark.com/",
+    "githubLink": "https://github.com/jamespark89/communityWebsite/tree/main"
+  },
+  {
+    "src": "photoweb.png",
+    "title": "Photography Web",
+    "description": "Landing page / gallery",
+    "skills": "PHP / Bootstrap",
+    "liveLink": "https://jphotographyweb.herokuapp.com/",
+    "githubLink": "https://github.com/jamespark89/photoweb-php-"
+  }
+]
