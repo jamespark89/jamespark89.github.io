@@ -1,7 +1,7 @@
 <template>
   <div id="sideDiv" class="sidebar">
     <div id="stickyDiv" :class="{ fixed: isFixed }">
-      <h1>works</h1>
+      <h1>WORKS</h1>
       <ul>
         <li v-for="(project, index) in projects" :key="index">
           <a :href="'#' + projectHref(index)">{{ projects[index].title }}</a>

@@ -1,8 +1,8 @@
 [
   {
     "src": "movieapp.png",
-    "title": "Movie App",
-    "description": "Movie App",
+    "title": "Movie Website",
+    "description": "Movie Website by TMDB API",
     "skills": "React.js / Material UI",
     "liveLink": "https://jamespark89.github.io/react-app-movieapp",
     "githubLink": "https://github.com/jamespark89/react-app-movieapp"
@@ -11,21 +11,21 @@
     "src": "ecommerce.png",
     "title": "Ecommerce Website",
     "description": "Ecommerce Website",
-    "skills": "Vue.js",
+    "skills": "Vue.js / GSAP",
     "liveLink": "http://ecommerce.devjamespark.com",
     "githubLink": "https://github.com/jamespark89/ecommerce-vue"
   },
   {
     "src": "portfolio.png",
-    "title": "Fronted Portfolio Website",
-    "description": "Fronted Portfolio Website",
+    "title": "Portfolio Website",
+    "description": "Portfolio Website",
     "skills": "Vue.js",
     "liveLink": "https://devjamespark.com",
     "githubLink": "https://github.com/jamespark89/jamespark89.github.io/tree/master"
   },
   {
     "src": "communitywebsite.png",
-    "title": "communitywebsite",
+    "title": "Community Website",
     "description": "Login / board",
     "skills": "PHP / Mysql",
     "liveLink": "http://auslife.devjamespark.com/",
@@ -33,7 +33,7 @@
   },
   {
     "src": "photoweb.png",
-    "title": "Photography Web",
+    "title": "Photography Website",
     "description": "Landing page / gallery",
     "skills": "PHP / Bootstrap",
     "liveLink": "https://jphotographyweb.herokuapp.com/",

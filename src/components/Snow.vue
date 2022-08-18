@@ -6,7 +6,7 @@
 export default {
   data() {
     return {
-      snowNumber: 200,
+      snowNumber: 100,
       snowSize: 35,
       count: '1',
       mouseX: '',
@@ -20,7 +20,7 @@ export default {
   mounted() {
     this.addSnow()
 
-    window.addEventListener('mousemove', this.touchSnow)
+    // window.addEventListener('mousemove', this.touchSnow)
   },
   methods: {
     addSnow() {
@@ -44,29 +44,29 @@ export default {
       }
       snow.setAttribute('id', this.i)
       this.i++
-    },
-
-    touchSnow(e) {
-      if (this.count === this.snowNumber) {
-        let i = 1
-        let snow = 0
-        while (i < this.snowNumber + 1) {
-          snow = document.getElementById(i)
-          this.snowX = parseInt(snow.getBoundingClientRect().x / 50)
-          this.snowY = parseInt(snow.getBoundingClientRect().y / 50)
-          i++
-          if (
-            this.snowX === parseInt(e.clientX / 50) &&
-            this.snowY === parseInt(e.clientY / 50)
-          ) {
-            snow.style.transform = 'scale(0.3)'
-            snow.style.opacity = toString(
-              `${parseInt(snow.style.opacity) * 0.1}`
-            )
-          }
-        }
-      }
     }
+
+    // touchSnow(e) {
+    //   if (this.count === this.snowNumber) {
+    //     let i = 1
+    //     let snow = 0
+    //     while (i < this.snowNumber + 1) {
+    //       snow = document.getElementById(i)
+    //       this.snowX = parseInt(snow.getBoundingClientRect().x / 50)
+    //       this.snowY = parseInt(snow.getBoundingClientRect().y / 50)
+    //       i++
+    //       if (
+    //         this.snowX === parseInt(e.clientX / 50) &&
+    //         this.snowY === parseInt(e.clientY / 50)
+    //       ) {
+    //         snow.style.transform = 'scale(0.3)'
+    //         snow.style.opacity = toString(
+    //           `${parseInt(snow.style.opacity) * 0.1}`
+    //         )
+    //       }
+    //     }
+    //   }
+    // }
   }
 }
 </script>

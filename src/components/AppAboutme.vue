@@ -2,7 +2,7 @@
   <div>
     <div class="aboutme">
       <div class="aboutmeHead">
-        <h1>About Me</h1>
+        <h1>ABOUT ME</h1>
       </div>
       <div class="aboutmeMain">
         <p>
@@ -49,6 +49,9 @@ export default {
 </script>
 
 <style scoped>
+h1 {
+  font-size: 2rem;
+}
 .aboutmeMain > p {
   margin-top: 3rem;
   font-size: 1.2rem;
