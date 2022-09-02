@@ -108,6 +108,7 @@ form textarea {
   background: #f5f5f5;
 }
 form button {
+  font-family: 'Roboto Mono', monospace;
   padding: 15px;
   background: var(--orange);
   color: var(--dark);

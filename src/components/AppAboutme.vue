@@ -7,9 +7,11 @@
       <div class="aboutmeMain">
         <p>
           Hi, I'm a
-          <b style="color: var(--light)">front-end developer</b> based on
+          <b style="color: var(--light)">front-end developer</b> based in
           Melbourne.<br />
-          I love to making value with
+        </p>
+        <p>
+          I love to create values with
           <b style="color: var(--light)">web development.</b><br />
         </p>
       </div>
@@ -52,11 +54,14 @@ export default {
 h1 {
   font-size: 2rem;
 }
+.aboutmeMain {
+  margin-top: 2rem;
+}
 .aboutmeMain > p {
-  margin-top: 3rem;
+  margin-top: 0.5rem;
   font-size: 1.2rem;
   color: #aaaaaa;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Open Sans', sans-serif;
   overflow: hidden;
 }
 </style>

@@ -99,6 +99,9 @@ ul > li {
   margin: 30px;
   font-size: 18px;
 }
+a {
+  font-family: 'Roboto Mono', monospace;
+}
 .static {
   display: none;
 }

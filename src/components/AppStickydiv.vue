@@ -101,6 +101,7 @@ export default {
 }
 
 #stickyDiv > ul > li > a {
+  font-family: 'Roboto Mono', monospace;
   text-decoration: none;
   color: var(--lihgt);
   font-size: 1.1rem;

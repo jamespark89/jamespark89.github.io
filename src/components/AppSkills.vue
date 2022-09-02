@@ -24,9 +24,10 @@ export default {
       skillsimgs: [
         require('../../public/html-5.png'),
         require('../../public/css-3.png'),
-        require('../../public/java-script.png'),
+        require('../../public/javascript.png'),
         require('../../public/vue.png'),
-        require('../../public/php.png')
+        require('../../public/react.png'),
+        require('../../public/nodejs.png')
       ]
     }
   },
@@ -77,12 +78,16 @@ h1 {
 .skillsIcon ul > li > img {
   width: 80%;
   min-width: 50px;
+  transition: transfrom 1s ease-in-out 1s;
+}
+.skillsIcon ul > li > img:hover {
+  transform: translateY(-10px);
 }
 .skills ul > li {
   width: 10vw;
   margin: 3%;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .skillsIcon > ul {
     flex-wrap: wrap;
     justify-content: left;

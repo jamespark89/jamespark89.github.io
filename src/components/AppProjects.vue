@@ -125,14 +125,20 @@ a:hover {
   width: 40%;
   height: 100%;
 }
-.projectDescription,
-.usedSkills {
+.projectDescription {
+  font-family: 'Lato', sans-serif;
   color: var(--light);
 }
+.usedSkills {
+  font-family: 'Lato', sans-serif;
+  color: var(--grey);
+}
 .projectTitle {
+  font-family: 'Lato', sans-serif;
   font-size: 1.5rem;
-  color: var(--dark);
-  background: var(--orange);
+  font-weight: bold;
+  /* color: var(--dark); */
+  color: var(--orange);
 }
 @media screen and (max-width: 700px) {
   .sidebar,

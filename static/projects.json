@@ -1,9 +1,17 @@
 [
   {
+    "src": "MERN-communitywebsite.png",
+    "title": "Communitywebstie",
+    "description": "MERN stack CRUD website",
+    "skills": "React / Redux-toolkit / Node / Express / MongoDB / Google-Oauth / AWS s3",
+    "liveLink": "https://mern-communitywebsite.herokuapp.com/",
+    "githubLink": "https://github.com/jamespark89/mern-communitywebsite"
+  },
+  {
     "src": "movieapp.png",
     "title": "Movie Website",
-    "description": "Movie Website by TMDB API",
-    "skills": "React.js / Material UI",
+    "description": "Movie Website using TMDB API",
+    "skills": "React / Redux / Material UI",
     "liveLink": "https://jamespark89.github.io/react-app-movieapp",
     "githubLink": "https://github.com/jamespark89/react-app-movieapp"
   },
@@ -11,7 +19,7 @@
     "src": "ecommerce.png",
     "title": "Ecommerce Website",
     "description": "Ecommerce Website",
-    "skills": "Vue.js / GSAP",
+    "skills": "Vue / Vuex",
     "liveLink": "http://ecommerce.devjamespark.com",
     "githubLink": "https://github.com/jamespark89/ecommerce-vue"
   },
@@ -19,17 +27,9 @@
     "src": "portfolio.png",
     "title": "Portfolio Website",
     "description": "Portfolio Website",
-    "skills": "Vue.js",
+    "skills": "Vue / GSAP",
     "liveLink": "https://devjamespark.com",
     "githubLink": "https://github.com/jamespark89/jamespark89.github.io/tree/master"
-  },
-  {
-    "src": "communitywebsite.png",
-    "title": "Community Website",
-    "description": "Login / board",
-    "skills": "PHP / Mysql",
-    "liveLink": "http://auslife.devjamespark.com/",
-    "githubLink": "https://github.com/jamespark89/communityWebsite/tree/main"
   },
   {
     "src": "photoweb.png",

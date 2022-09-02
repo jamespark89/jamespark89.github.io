@@ -20,7 +20,7 @@ html {
 
 :root {
   --primary: #6ac98d;
-  --grey: #64748b;
+  --grey: #a9b3c3;
   --dark: #1e293b;
   --light: #f1f5f9;
   --orange: rgb(248, 205, 124);

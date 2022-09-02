@@ -4,16 +4,35 @@
       <h1>Hello, I'm James.</h1>
     </div>
     <p>Front-end developer</p>
+
     <app-link />
+    <div class="resume">
+      <a href="Resume(James).pdf" target="_blank">
+        <img src="../../public/resume.png" class="resumeImage" />
+      </a>
+      <span>Resume</span>
+    </div>
   </div>
 </template>
 
 <script>
 import AppLink from '@/components/AppLink.vue'
+import gsap from 'gsap'
 
 export default {
   components: { AppLink },
-  name: 'HomeView'
+  name: 'HomeView',
+  mounted() {
+    gsap.to('.resumeImage', {
+      keyframes: {
+        '0%': { x: 500, y: -1000, scale: 10 },
+        '70%': { x: -250, y: -200, scale: 2, rotate: 360 },
+        '100%': { x: 0, y: 0, scale: 1 }
+      },
+      duration: 5,
+      ease: 'none'
+    })
+  }
 }
 </script>
 
@@ -28,6 +47,7 @@ export default {
   background: var(--dark); /* fallback for old browsers */
 }
 h1 {
+  font-size: 2.5rem;
   margin-top: 30vh;
   position: relative;
   font-family: 'Roboto Mono', monospace;
@@ -66,11 +86,10 @@ h1::after {
     background: transparent;
   }
 }
-p {
+.home > p {
   position: absolute;
   margin-top: 42vh;
   font-size: 2rem;
-  font-family: 'Roboto', sans-serif;
   animation: slideup 5s;
 }
 @keyframes slideup {
@@ -85,6 +104,21 @@ p {
     opacity: 1;
     top: 0;
   }
+}
+
+.resume {
+  position: absolute;
+  margin-top: 50vh;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+.resume > span {
+  animation: slideup 6s;
+  font-family: sans-serif;
+}
+img {
+  width: 50px;
 }
 @media screen and (max-width: 600px) {
   h1 {
