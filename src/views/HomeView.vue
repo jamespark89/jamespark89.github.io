@@ -7,7 +7,7 @@
 
     <app-link />
     <div class="resume">
-      <a href="Resume(James).pdf" target="_blank">
+      <a href="SangkookPark_Resume.pdf" target="_blank">
         <img src="../../public/resume.png" class="resumeImage" />
       </a>
       <span>Resume</span>
