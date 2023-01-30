@@ -68,7 +68,6 @@ export default {
 <style scoped>
 .sidebar {
   width: 30%;
-  height: 100%;
   /* background: var(--dark); */
   display: flex;
   justify-content: center;
